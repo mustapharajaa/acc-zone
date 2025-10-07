@@ -9,20 +9,6 @@
       }
     }
   ],
-  "routes": [
-    {
-      "src": "/en/youtube/(.*)",
-      "dest": "/"
-    },
-    {
-      "src": "/en/youtube",
-      "dest": "/"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/en/youtube/$1"
-    }
-  ],
   "rewrites": [
     { "source": "/en/youtube/(.*)", "destination": "/$1" },
     { "source": "/en/youtube", "destination": "/" }
