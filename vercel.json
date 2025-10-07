@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    { "source": "/en/youtube/(.*)", "destination": "/index.html" },
+    { "source": "/en/youtube", "destination": "/index.html" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/en/youtube/(.*)", "dest": "/index.html" }
+  ],
+  "trailingSlash": false,
+  "cleanUrls": true
+}
