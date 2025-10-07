@@ -1,0 +1,5 @@
+{
+  "name": "FunPay Game Currency Marketplace",
+  "description": "A user interface clone of a marketplace for in-game currency and services, inspired by the FunPay website design. It showcases various game servers and allows users to browse listings for money, accounts, and other items.",
+  "requestFramePermissions": []
+}
