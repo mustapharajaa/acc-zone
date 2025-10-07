@@ -1,12 +1,30 @@
 {
-  "rewrites": [
-    { "source": "/en/youtube/(.*)", "destination": "/index.html" },
-    { "source": "/en/youtube", "destination": "/index.html" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/en/youtube/(.*)", "dest": "/index.html" }
+    {
+      "src": "/en/youtube/(.*)",
+      "dest": "/"
+    },
+    {
+      "src": "/en/youtube",
+      "dest": "/"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/en/youtube/$1"
+    }
   ],
-  "trailingSlash": false,
-  "cleanUrls": true
+  "rewrites": [
+    { "source": "/en/youtube/(.*)", "destination": "/$1" },
+    { "source": "/en/youtube", "destination": "/" }
+  ]
 }
