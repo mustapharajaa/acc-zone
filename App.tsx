@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 // --- TYPE DEFINITIONS ---
 interface Game {
@@ -421,7 +422,9 @@ const Popup = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => 
   );
 };
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
+  const location = useLocation();
+  // Your existing component code here
   const [activeCategory, setActiveCategory] = useState<string>('Accounts');
   const [showSocialMediaPopup, setShowSocialMediaPopup] = useState(false);
   const [clickedPlatform, setClickedPlatform] = useState('');
@@ -528,6 +531,16 @@ const App: React.FC = () => {
         </div>
       </main>
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <Router basename="/en/youtube">
+      <Routes>
+        <Route path="/" element={<AppContent />} />
+      </Routes>
+    </Router>
   );
 };
 
